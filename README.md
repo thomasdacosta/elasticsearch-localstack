@@ -1,4 +1,4 @@
-# Elasticsearch - Localstack
+# Elasticsearch - LocalStack
 
 Comandos básicos do Elasticsearch com o LocalStack
 
