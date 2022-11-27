@@ -49,58 +49,6 @@
         },
         "type": "text"
       },
-      "eyeColor": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
-      "favoriteFruit": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
-      "friends": {
-        "properties": {
-          "id": {
-            "type": "long"
-          },
-          "name": {
-            "fields": {
-              "keyword": {
-                "ignore_above": 256,
-                "type": "keyword"
-              }
-            },
-            "type": "text"
-          }
-        }
-      },
-      "gender": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
-      "greeting": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
       "guid": {
         "fields": {
           "keyword": {
@@ -109,9 +57,6 @@
           }
         },
         "type": "text"
-      },
-      "index": {
-        "type": "long"
       },
       "isActive": {
         "type": "boolean"
@@ -140,25 +85,7 @@
         },
         "type": "text"
       },
-      "picture": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
       "registered": {
-        "fields": {
-          "keyword": {
-            "ignore_above": 256,
-            "type": "keyword"
-          }
-        },
-        "type": "text"
-      },
-      "tags": {
         "fields": {
           "keyword": {
             "ignore_above": 256,

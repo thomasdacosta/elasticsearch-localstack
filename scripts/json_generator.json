@@ -1,0 +1,19 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    guid: '{{guid()}}',
+    isActive: '{{bool()}}',
+    balance: '{{floating(1000, 4000, 2, "$0,0.00")}}',
+    age: '{{integer(20, 40)}}',
+    name: '{{firstName()}} {{surname()}}',
+    company: '{{company().toUpperCase()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(1, "paragraphs")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}'
+  }
+]
