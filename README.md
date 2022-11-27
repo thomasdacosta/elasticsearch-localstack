@@ -1,6 +1,6 @@
 # Elasticsearch - Localstack
 
-Comandos básicos do Elasticsearch como o LocalStack
+Comandos básicos do Elasticsearch com o LocalStack
 
 ---
 
