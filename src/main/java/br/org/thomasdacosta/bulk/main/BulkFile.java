@@ -32,18 +32,24 @@ public class BulkFile {
 
             // Criando o arquivo de bulk
             StringBuilder bulk = new StringBuilder();
-            for (int i = 0; i <= 1000; i++) {
-                String id = String.valueOf((i + 1) * new Random().ints(1, 5000).findAny().getAsInt());
+            for (int i = 0; i <= 10000; i++) {
+                if ((i % 1000) == 0 && i != 0) {
+                    // Criando o arquivo de bulk
+                    System.out.println("Criando arquivo -> " + i);
+                    Path pathDataBulk = Paths.get("./scripts/data_bulk_generated_" + i + ".json");
+                    Files.writeString(pathDataBulk, bulk.toString(), StandardOpenOption.CREATE,
+                            StandardOpenOption.TRUNCATE_EXISTING);
+                    bulk = new StringBuilder();
+                }
+
+                String id = String.valueOf (i + 1);
                 client.setId(id);
                 client.setCompany("ACME COMPANY" + "-" + UUID.randomUUID().toString());
+
                 bulk.append(dataBulk.replace("@id", String.valueOf(id))).append("\r\n");
                 bulk.append(objectMapper.writeValueAsString(client)).append("\r\n");
             }
 
-            // Criando o arquivo de bulk
-            Path pathDataBulk = Paths.get("./scripts/data_bulk_generated.json");
-            Files.writeString(pathDataBulk, bulk.toString(), StandardOpenOption.CREATE,
-                    StandardOpenOption.TRUNCATE_EXISTING);
         } catch (Exception ex) {
             ex.printStackTrace(System.out);
         }
