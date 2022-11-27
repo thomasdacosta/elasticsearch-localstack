@@ -1,7 +1,8 @@
-package br.org.thomasdacosta.bulk;
+package br.org.thomasdacosta.bulk.dto;
 
 public class Client {
 
+    private String id;
     private String about;
     private String address;
     private float age;
@@ -15,6 +16,14 @@ public class Client {
     private String name;
     private String phone;
     private String registered;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getAbout() {
         return about;

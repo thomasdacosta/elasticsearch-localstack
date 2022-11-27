@@ -32,3 +32,6 @@ curl -s -XDELETE "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes
 
 echo "Inserindo documentos em lote"
 curl -s -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" -H 'Content-Type: application/json' --data-binary @data_bulk.json | jq .
+
+echo "Inserindo documentos em lote"
+curl -s -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" -H 'Content-Type: application/json' --data-binary @data_bulk_generated.json | jq .

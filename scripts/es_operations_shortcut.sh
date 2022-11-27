@@ -32,3 +32,6 @@ echo "Excluindo um documento"
 
 echo "Inserindo documentos em lote"
 ./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk.json | jq .
+
+echo "Inserindo documentos em lote"
+./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk_generated.json | jq .
