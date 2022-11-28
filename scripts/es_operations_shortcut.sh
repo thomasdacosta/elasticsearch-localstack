@@ -25,13 +25,16 @@ echo "Buscando todos os documentos"
 ./es.sh -XGET  "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_search?pretty"
 
 echo "Atualizando um documento"
-./es.sh -XPOST "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_update/1000?pretty" --data-binary @data_update.json | jq .
+./es.sh -XPOST "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_update/1000?pretty" --data-binary @data_update.json
 
 echo "Excluindo um documento"
 ./es.sh -XDELETE "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_doc/1000?pretty"
 
 echo "Inserindo documentos em lote"
-./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk.json | jq .
+./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk.json
 
 echo "Inserindo documentos em lote"
-./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk_generated.json | jq .
+./es.sh -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" --data-binary @data_bulk_generated.json
+
+echo "Query nos documentos"
+./es.sh -XGET  "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_search?q=company:spacewax&pretty"

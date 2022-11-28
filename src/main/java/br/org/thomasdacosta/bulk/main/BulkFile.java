@@ -1,6 +1,6 @@
 package br.org.thomasdacosta.bulk.main;
 
-import br.org.thomasdacosta.bulk.dto.Client;
+import br.org.thomasdacosta.bulk.dto.Customers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
@@ -27,7 +27,7 @@ public class BulkFile {
             // Efetuando a leitura do JSON de clientes
             ObjectMapper objectMapper = new ObjectMapper();
             URL url = BulkFile.class.getResource("/data_create.json");
-            Client client = objectMapper.readValue(url, Client.class);
+            Customers customers = objectMapper.readValue(url, Customers.class);
 
             // Criando o arquivo de bulk
             StringBuilder bulk = new StringBuilder();
@@ -42,11 +42,11 @@ public class BulkFile {
                 }
 
                 String id = String.valueOf (i + 1);
-                client.setId(id);
-                client.setCompany("ACME COMPANY" + "-" + UUID.randomUUID().toString());
+                customers.setId(id);
+                customers.setCompany("ACME COMPANY" + "-" + UUID.randomUUID().toString());
 
                 bulk.append(dataBulk.replace("@id", String.valueOf(id))).append("\r\n");
-                bulk.append(objectMapper.writeValueAsString(client)).append("\r\n");
+                bulk.append(objectMapper.writeValueAsString(customers)).append("\r\n");
             }
 
         } catch (Exception ex) {

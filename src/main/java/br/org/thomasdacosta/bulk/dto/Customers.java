@@ -1,6 +1,6 @@
 package br.org.thomasdacosta.bulk.dto;
 
-public class Client {
+public class Customers {
 
     private String id;
     private String about;

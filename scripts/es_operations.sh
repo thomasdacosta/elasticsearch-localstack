@@ -35,3 +35,6 @@ curl -s -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" -H '
 
 echo "Inserindo documentos em lote"
 curl -s -XPUT "clientes.us-east-1.es.localhost.localstack.cloud:4566/_bulk" -H 'Content-Type: application/json' --data-binary @data_bulk_generated.json | jq .
+
+echo "Query nos documentos"
+curl -s -XGET  "clientes.us-east-1.es.localhost.localstack.cloud:4566/clientes-index/_search?q=company:spacewax&pretty" | jq .
